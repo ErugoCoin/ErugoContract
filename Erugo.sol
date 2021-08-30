@@ -1,7 +1,3 @@
-/**
- *Submitted for verification at Etherscan.io on 2021-07-08
-*/
-
 pragma solidity ^0.4.24;
 library Math {
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {
