@@ -66,7 +66,7 @@ contract ERC20Token {
     function transferFrom(address from, address to, uint256 value) public returns (bool) {
         require(to != address(0));
         require(value <= balances_[from]);
-        require(value <= allowed_[msg.sender][from]);
+        require(value <= allowed_[from][msg.sender]);
         balances_[from] = balances_[from].sub(value);
         balances_[to] = balances_[to].add(value);
         allowed_[from][msg.sender] = allowed_[from][msg.sender].sub(value);
