@@ -69,8 +69,8 @@ contract ERC20Token {
         require(value <= allowed_[msg.sender][from]);
         balances_[from] = balances_[from].sub(value);
         balances_[to] = balances_[to].add(value);
-        allowed_[msg.sender][from] = allowed_[msg.sender][from].sub(value);
-        emit Approval(msg.sender, from, allowed_[msg.sender][from]);
+        allowed_[from][msg.sender] = allowed_[from][msg.sender].sub(value);
+        emit Approval(from, msg.sender, allowed_[from][msg.sender]);
         emit Transfer(from, to, value);
         return true;
     }
