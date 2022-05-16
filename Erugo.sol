@@ -105,13 +105,12 @@ contract ERC20Token {
         emit Burn(burner, value);
     }
 }
-contract ErugoCoin is Ownable, ERC20Token {
+contract ErugoWorldCoin is Ownable, ERC20Token {
     using Math for uint;
     uint8 constant public decimals  = 18;
-    string constant public symbol   = "ERC";
-    string constant public name     = "erugo coin";
-    address constant company = 0xbBF8a9B66f2eFA67564f542BC96C09eD574C4678; // company account
-    constructor(uint amount) public {
+    string constant public symbol   = "EWC";
+    string constant public name     = "erugo world coin";
+    constructor(address company, uint amount) public {
         totalSupply_ = amount;
         initSetting(company, totalSupply_);
     }
