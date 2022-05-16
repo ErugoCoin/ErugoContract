@@ -119,7 +119,7 @@ contract ErugoWorldCoin is Ownable, ERC20Token {
         _;
     }
     function withdrawTokens(address cont) external onlyOwner {
-        ErugoCoin tc = ErugoCoin(cont);
+        ErugoWorldCoin tc = ErugoWorldCoin(cont);
         tc.transfer(owner_, tc.balanceOf(this));
     }
     function initSetting(address addr, uint amount) internal returns (bool) {
